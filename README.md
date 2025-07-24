@@ -1,4 +1,4 @@
-# LSPocho
+# LSP(ocho)
 
 LSP implementation to learn about LSP (and rust btw)
 
