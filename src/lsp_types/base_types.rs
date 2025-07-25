@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-enum LspAny {
+pub enum LspAny {
     Object(HashMap<String, LspAny>),
     Array(Vec<LspAny>),
     String(String),
@@ -9,4 +9,14 @@ enum LspAny {
     Decimal(f32),
     Bool(bool),
     None
+}
+
+pub enum LspRequestId {
+    Integer(i32),
+    String(String)
+}
+
+pub enum LspObjectOrArray {
+    Object(HashMap<String, LspAny>),
+    Array(Vec<LspAny>)
 }
