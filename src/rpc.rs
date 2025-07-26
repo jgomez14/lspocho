@@ -1,14 +1,13 @@
 use crate::lsp_types::Message;
 
+#[cfg(test)]
+mod tests;
+
 pub fn encode_message(message: Message) -> String {
-    // 1. Calculate size of message
-    // 2. Construct the headers
-    // 3. Add the content
+    let message_string = message.as_string();
+    let message_bytes = message_string.len();
 
-    let message_as_json = message.as_json();
-    // let message_as_str = String::from(message_as_json)
-
-    let mut encoded_message = String::from("Content-Length: <NUMBER>");
+    let encoded_message = format!("Content-Length: {message_bytes}\r\n\r\n{message_string}");
 
     return encoded_message
 }
